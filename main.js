@@ -14,13 +14,32 @@ let Calc = (value, sym) => {
     
 }
 
-console.log(Calc('5*5', '*'));
 
 num.forEach((el) => {
     el.addEventListener('click', ()=> {
-        console.log(el.textContent)
         calcInput.value += el.textContent;
-        sum = calcInput.value;
+
+        if(el.textContent == '=') {
+            calcInput.value = calcInput.value.slice(0, -1);
+            console.log(calcInput.value)
+            if(String(calcInput.value).includes('+')) {
+                console.log(Calc(String(calcInput.value), '+'));
+                calcInput.value = Calc(String(calcInput.value), '+');
+            }
+            else if(String(calcInput.value).includes('-')) {
+                console.log(Calc(String(calcInput.value), '-'));
+                calcInput.value = Calc(String(calcInput.value), '-');
+            }
+            else if(String(calcInput.value).includes('*')) {
+                console.log(Calc(String(calcInput.value), '*'));
+                calcInput.value = Calc(String(calcInput.value), '*');
+            }
+            else if(String(calcInput.value).includes('/')) {
+                console.log(Calc(String(calcInput.value), '/'));
+                calcInput.value = Calc(String(calcInput.value), '/');
+            }
+
+        }
     });
-    console.log(sum)
 })
+
