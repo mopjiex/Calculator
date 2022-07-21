@@ -1,0 +1,88 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 ,h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+   object-fit: cover; 
+}
+
+
+.container {
+    max-width: 1240px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.header {
+    min-height: 100vh;
+    background: rgb(231,97,88);
+    background: radial-gradient(circle, rgba(231,97,88,1) 0%, rgba(81,0,222,1) 100%);
+}
+
+.calculator {
+    width: 500px;
+    position: relative;
+    left: 25%;
+    top: 150px;
+}
+
+.calculator__input {
+    width: 100%;
+    border: none;
+    height: 55px;
+    border-radius: 10px;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.calculator__btn {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 10px 5px;
+}
+
+
+.num {
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-top: 20px; 
+    font-weight: 700;
+}
+
+.symDel{
+    grid-column: 4/ -1;
+}
+
+.numRavno {
+    grid-column: 3 / -2;
+}
+
+.num-0 {
+    grid-column: 2 / -3;
+}
