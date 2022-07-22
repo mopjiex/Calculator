@@ -23,9 +23,7 @@ img {
    object-fit: cover; 
 }
 
-.dn {
-    opacity: 0;
-}
+
 .container {
     max-width: 1240px;
     padding: 0 20px;
@@ -53,16 +51,33 @@ img {
     background-color: #fff;
 }
 
-.game__list {
+.r {
+    border: 1px solid red;
+}
+
+.game__list, .game__checked {
     display: flex;
     font-size: 60px;
     margin-left: 50px;
 }
 
-.game__item {
+
+.game__item, .checked__item {
     margin-right: 30px;
     cursor: pointer;
 }
+
+.checked__item {
+    margin-top: 50px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.cp {
+    pointer-events: none;
+    border: 1px solid red;
+}
+
 
 .game__item::after {
     content: " ";
