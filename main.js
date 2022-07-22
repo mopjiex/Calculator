@@ -2,12 +2,12 @@ let num = document.querySelectorAll('.num');
 let calcInput = document.querySelector('.calculator__input');
 let game = document.querySelector('.game');
 let gameList = document.querySelector('.game__list');
-let gameItem = document.querySelectorAll('.game__item');
+
 
 let checkedItem = document.querySelectorAll('.checked__item');
 
 
-list = ['1', '2', '3'];
+list = ['1', '2', '3', '1', '2', '3'];
 
 let Calc = (value, sym) => {
     let index = value.indexOf(sym);
@@ -32,12 +32,15 @@ let gameItems = item => {
         li.innerHTML = +item[i];
         li.classList.add('game__item');
         gameList.append(li);
+
     }
 }
 
 gameItems(list);
 
-console.log(gameItem[0].value)
+let gameItem = document.querySelectorAll('.game__item');
+
+
 checkedItem.forEach(item => {
     item.addEventListener('click', ()=> {
         
@@ -46,6 +49,11 @@ checkedItem.forEach(item => {
         })
         ) {
             console.log('Такое есть в массиве');
+            for(let elem of gameItem) {
+                if(item.textContent == elem.textContent) {
+                    elem.classList.add('r')
+                }
+            }
             
         } else {
             console.log('Нету')
