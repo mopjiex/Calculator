@@ -21,9 +21,6 @@ let Calc = (value, sym) => {
 }
 
 
-
-
-
 let gameItems = item => {
     //item = String(item).split('');
     console.log(item)
@@ -35,33 +32,6 @@ let gameItems = item => {
 
     }
 }
-
-gameItems(list);
-
-let gameItem = document.querySelectorAll('.game__item');
-
-
-checkedItem.forEach(item => {
-    item.addEventListener('click', ()=> {
-        
-        if(list.find(elem => {
-            return elem == item.textContent;
-        })
-        ) {
-            console.log('Такое есть в массиве');
-            for(let elem of gameItem) {
-                if(item.textContent == elem.textContent) {
-                    elem.classList.add('r')
-                }
-            }
-            
-        } else {
-            console.log('Нету')
-        }
-        item.classList.add('cp');
-    })
-})
-
 
 num.forEach((el) => {
     el.addEventListener('click', ()=> {
@@ -91,4 +61,43 @@ num.forEach((el) => {
         }
     });
 })
+
+gameItems(list);
+let count = 0;
+let gameItem = document.querySelectorAll('.game__item');
+
+
+checkedItem.forEach(item => {
+    item.addEventListener('click', ()=> {
+        
+        if(list.find(elem => {
+            return elem == item.textContent;
+        })
+        ) {
+            console.log('Такое есть в массиве');
+            for(let elem of gameItem) {
+                if(item.textContent == elem.textContent) {
+                    elem.classList.add('r')
+                }
+            }
+            
+        } else {
+            console.log('Нету')
+        }
+        item.classList.add('cp');
+        
+        let check = Array.from(gameItem).every((elem) => {
+            return elem.classList.contains('r');
+        });
+
+        count++;
+        console.log(count);
+
+        if(count >= 5) console.log('ПРоиграл')
+        else if(count < 5 && check) {
+            console.log('Выиграл')
+        }
+    })
+})
+
 
