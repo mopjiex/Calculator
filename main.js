@@ -1,7 +1,9 @@
 let num = document.querySelectorAll('.num');
 let calcInput = document.querySelector('.calculator__input');
-let sum = '';
+let game = document.querySelector('.game');
+let gameItem = document.querySelectorAll('.game__item');
 
+list = '12345';
 
 let Calc = (value, sym) => {
     let index = value.indexOf(sym);
@@ -14,12 +16,18 @@ let Calc = (value, sym) => {
     
 }
 
+gameItem.forEach( item => {
+    item.addEventListener('click', ()=> {
+          
+    })
+})
 
 num.forEach((el) => {
     el.addEventListener('click', ()=> {
         calcInput.value += el.textContent;
 
         if(el.textContent == '=') {
+            //game.style.display = 'block';
             calcInput.value = calcInput.value.slice(0, -1);
             console.log(calcInput.value)
             if(String(calcInput.value).includes('+')) {
