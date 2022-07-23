@@ -7,8 +7,6 @@ let gameList = document.querySelector('.game__list');
 let checkedItem = document.querySelectorAll('.checked__item');
 
 
-list = ['1', '2', '3', '1', '2', '3'];
-
 let Calc = (value, sym) => {
     let index = value.indexOf(sym);
     let n1 = value.slice(0, index);
@@ -33,40 +31,51 @@ let gameItems = item => {
     }
 }
 
-num.forEach((el) => {
-    el.addEventListener('click', ()=> {
-        calcInput.value += el.textContent;
 
-        if(el.textContent == '=') {
-            //game.style.display = 'block';
-            calcInput.value = calcInput.value.slice(0, -1);
-            console.log(calcInput.value)
-            if(String(calcInput.value).includes('+')) {
-                console.log(Calc(String(calcInput.value), '+'));
-                calcInput.value = Calc(String(calcInput.value), '+');
-            }
-            else if(String(calcInput.value).includes('-')) {
-                console.log(Calc(String(calcInput.value), '-'));
-                calcInput.value = Calc(String(calcInput.value), '-');
-            }
-            else if(String(calcInput.value).includes('*')) {
-                console.log(Calc(String(calcInput.value), '*'));
-                calcInput.value = Calc(String(calcInput.value), '*');
-            }
-            else if(String(calcInput.value).includes('/')) {
-                console.log(Calc(String(calcInput.value), '/'));
-                calcInput.value = Calc(String(calcInput.value), '/');
-            }
-
-        }
-    });
-})
-
-gameItems(list);
+//gameItems(list);
 let count = 0;
-let gameItem = document.querySelectorAll('.game__item');
+//let gameItem = document.querySelectorAll('.game__item');
 
 
+let temp = list => {
+    gameItems(list);
+    let gameItem = document.querySelectorAll('.game__item');
+
+    checkedItem.forEach(item => {
+        item.addEventListener('click', ()=> {
+            
+            if(list.find(elem => {
+                return elem == item.textContent;
+            })
+            ) {
+                console.log('Такое есть в массиве');
+                for(let elem of gameItem) {
+                    if(item.textContent == elem.textContent) {
+                        elem.classList.add('r')
+                    }
+                }
+                
+            } else {
+                console.log('Нету')
+                count++;
+            }
+            item.classList.add('cp');
+            
+            let check = Array.from(gameItem).every((elem) => {
+                return elem.classList.contains('r');
+            });
+    
+            console.log(count);
+    
+            if(count >= 5) console.log('ПРоиграл')
+            else if(count < 5 && check) {
+                console.log('Выиграл')
+            }
+        })
+    })
+}
+
+/*
 checkedItem.forEach(item => {
     item.addEventListener('click', ()=> {
         
@@ -100,4 +109,38 @@ checkedItem.forEach(item => {
     })
 })
 
+*/
 
+
+num.forEach((el) => {
+    el.addEventListener('click', ()=> {
+        calcInput.value += el.textContent;
+
+        if(el.textContent == '=') {
+            game.style.display = 'block';
+            calcInput.value = calcInput.value.slice(0, -1);
+            console.log(calcInput.value)
+            if(String(calcInput.value).includes('+')) {
+                calcInput.value = Calc(String(calcInput.value), '+');
+                calcInputArray = String(calcInput.value).split('');
+                temp(calcInputArray)
+            }
+            else if(String(calcInput.value).includes('-')) {
+                calcInput.value = Calc(String(calcInput.value), '-');
+                calcInputArray = String(calcInput.value).split('');
+                temp(calcInputArray)
+            }
+            else if(String(calcInput.value).includes('*')) {
+                calcInput.value = Calc(String(calcInput.value), '*');
+                calcInputArray = String(calcInput.value).split('');
+                temp(calcInputArray)
+            }
+            else if(String(calcInput.value).includes('/')) {
+                calcInput.value = Calc(String(calcInput.value), '/');
+                calcInputArray = String(calcInput.value).split('');
+                temp(calcInputArray)
+            }
+
+        }
+    });
+})
