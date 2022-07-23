@@ -23,7 +23,6 @@ img {
    object-fit: cover; 
 }
 
-
 .container {
     max-width: 1240px;
     padding: 0 20px;
@@ -40,7 +39,6 @@ img {
     background: radial-gradient(circle, rgba(231,97,88,1) 0%, rgba(81,0,222,1) 100%);
 }
 
-
 .game {
     
     position: absolute;
@@ -51,16 +49,11 @@ img {
     background-color: #fff;
 }
 
-.r {
-    border: 1px solid red;
-}
-
 .game__list, .game__checked {
     display: flex;
     font-size: 60px;
     margin-left: 50px;
 }
-
 
 .game__item, .checked__item {
     margin-right: 30px;
@@ -78,6 +71,13 @@ img {
     border: 1px solid red;
 }
 
+.game__item {
+    opacity: 0;
+}
+
+.r {
+    opacity: 1;
+}
 
 .game__item::after {
     content: " ";
