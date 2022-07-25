@@ -27,7 +27,13 @@ let gameItems = item => {
         li.innerHTML = +item[i];
         li.classList.add('game__item');
         gameList.append(li);
-
+        let p = document.createElement('p');
+        let div = document.createElement('div');
+        p.classList.add('item__check');
+        div.classList.add('game__border');
+        p.innerHTML = +item[i];
+        li.append(p);
+        li.append(div);
     }
 }
 
@@ -39,8 +45,8 @@ let count = 0;
 
 let temp = list => {
     gameItems(list);
-    let gameItem = document.querySelectorAll('.game__item');
-
+    //let gameItem = document.querySelectorAll('.game__item');
+    let itemCheck = document.querySelectorAll('.item__check');
     checkedItem.forEach(item => {
         item.addEventListener('click', ()=> {
             
@@ -49,7 +55,7 @@ let temp = list => {
             })
             ) {
                 console.log('Такое есть в массиве');
-                for(let elem of gameItem) {
+                for(let elem of itemCheck) {
                     if(item.textContent == elem.textContent) {
                         elem.classList.add('r')
                     }
@@ -61,7 +67,7 @@ let temp = list => {
             }
             item.classList.add('cp');
             
-            let check = Array.from(gameItem).every((elem) => {
+            let check = Array.from(itemCheck).every((elem) => {
                 return elem.classList.contains('r');
             });
     

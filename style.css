@@ -60,6 +60,10 @@ img {
     cursor: pointer;
 }
 
+.game__checked  {
+    margin-top: 100px;
+}
+
 .checked__item {
     margin-top: 50px;
     border: 1px solid black;
@@ -71,7 +75,7 @@ img {
     border: 1px solid red;
 }
 
-.game__item {
+.item__check {
     opacity: 0;
 }
 
@@ -79,10 +83,10 @@ img {
     opacity: 1;
 }
 
-.game__item::after {
-    content: " ";
-    display: block;
-    border-bottom: 5px solid black;
+.game__border {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 5px solid black;
 }
 
 .calculator {
