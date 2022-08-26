@@ -1,0 +1,88 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 ,h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+   object-fit: cover; 
+}
+
+*:focus {outline: none}
+
+body {
+    background-color: #336699;
+}
+
+.header {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: 270px;
+    height: 380px;
+    background-color: #fff;
+    
+}
+
+.calculator__input {
+    height: 60px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 38px;
+    text-align: center;
+    background-color: #9999CC;
+    margin-bottom: 15px;
+}
+
+.calculator__nums {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    gap: 15px 5px;
+}
+
+
+.num {
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.num-add {
+    grid-column-end: -1;
+}
+
+.num-equals {
+    grid-row-end: 5;
+    grid-column-end: -2;
+}
+
+.num-0 {
+    grid-column-end: -3;
+}

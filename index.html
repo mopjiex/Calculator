@@ -4,56 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./normalize.css">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js" defer></script>
-    <title>Calculator</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js" defer></script>
+    <title>Калькулятор</title>
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <div class="game">
-                <ul class="game__list">
-                    
-                </ul>
+       <div class="calculator">
+        <input type="text" class="calculator__input">
 
-                <ul class="game__checked">
-                    <li class="checked__item">0</li>
-                    <li class="checked__item">1</li>
-                    <li class="checked__item">2</li>
-                    <li class="checked__item">3</li>
-                    <li class="checked__item">4</li>
-                    <li class="checked__item">5</li>
-                    <li class="checked__item">6</li>
-                    <li class="checked__item">7</li>
-                    <li class="checked__item">8</li>
-                    <li class="checked__item">9</li>
-                </ul>
-            </div>
-            <div class="calculator">
-                <input type="text" class="calculator__input">
-                <div class="calculator__btn">
-                    <div class="num-9 num">9</div>
-                    <div class="num-8 num">8</div>
-                    <div class="num-7 num">7</div>
-                    <div class="symPlus num">+</div>
+        <div class="calculator__nums">
+            <div class="num num-1">1</div>
+            <div class="num num-2">2</div>
+            <div class="num num-3">3</div>
+            <div class="num num-div">/</div>
 
-                    <div class="num-6 num">6</div>
-                    <div class="num-5 num">5</div>
-                    <div class="num-4 num">4</div>
-                    <div class="symMin num">-</div>
+            <div class="num num-4">4</div>
+            <div class="num num-5">5</div>
+            <div class="num num-6">6</div>
+            <div class="num num-mul">*</div>
 
-                    <div class="num-3 num">3</div>
-                    <div class="num-2 num">2</div>
-                    <div class="num-1 num">1</div>
-                    <div class="symUmnj num">*</div>
+            <div class="num num-7">7</div>
+            <div class="num num-8">8</div>
+            <div class="num num-9">9</div>
+            <div class="num num-sub">-</div>
 
-                    <div class="num-0 num">0</div>
-                    <div class="numRavno num">=</div>
-                    <div class="symDel num">/</div>
-                </div>
-            </div>
+            <div class="num num-0">0</div>
+            <div class="num num-add">+</div>
+            <div class="num num-equals">=</div>
         </div>
+       </div>
     </header>
 </body>
 </html>
