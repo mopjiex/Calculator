@@ -45,6 +45,7 @@ body {
 
 .calculator__input {
     height: 60px;
+    padding: 0 5px;
     width: 100%;
     border: none;
     border-radius: 10px;
