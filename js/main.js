@@ -1,11 +1,18 @@
 'use strict';
 
+const img1 = document.querySelector('.img-1');
+const img2 = document.querySelector('.img-2');
+const img3 = document.querySelector('.img-3');
+const img4 = document.querySelector('.img-4');
+const img5 = document.querySelector('.img-5');
+
 const num = document.querySelectorAll('.num');
 const calculatorInput = document.querySelector('.calculator__input');
 const result = document.querySelector('.result');
 const optionItem = document.querySelectorAll('.option__item');
 const hangman = document.querySelector('.hangman');
-
+const losing = document.querySelector('.losing');
+const losingBtn = document.querySelector('.losing__btn');
 const calc = (stroka) => {
     return eval(stroka);
 }
@@ -42,23 +49,51 @@ const temp = list => {
                     } 
                 }
             } else {
-                console.log('Такого элоемента нет');
+                console.log('Такого элемента нет');
                 count++;
             }
             item.classList.add('disable');
 
+            if(count == 1) {
+                img1.classList.add('db');
+            } else if(count == 2) {
+                img2.classList.add('db');
+            } else if(count == 3) {
+                img3.classList.add('db');
+            } else if(count == 4) {
+                img4.classList.add('db');
+            } else if(count == 5) {
+                img5.classList.add('db');
+            }
             const check = Array.from(resultItemNum).every(elem => {
                 return elem.classList.contains('db');
             });
 
-            if(count >= 5) console.log('ПРоиграл')
+            if(count >= 5) {
+                losing.style.display = 'block';
+                console.log('ПРоиграл')
+                for(let elem of optionItem) {
+                    elem.classList.add('disable');
+                }
+                
+                losingBtn.addEventListener('click', () => {
+                    location.reload();
+                })
+            }
             else if(count < 5 && check) {
                 console.log('Выиграл')
-                hangman.style.display = 'none';
+                hangman.classList.remove('db');
                 for(let item of optionItem) {
                     item.classList.remove('disable');
                 }
                 result.innerHTML = '';
+                count = 0;
+                img1.classList.remove('db');
+                img2.classList.remove('db');
+                img3.classList.remove('db');
+                img4.classList.remove('db');
+                img5.classList.remove('db');
+                
             }
         });
     });
@@ -75,4 +110,5 @@ num.forEach(elem => {
         }
     })
 })
+
 

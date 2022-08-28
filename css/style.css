@@ -25,6 +25,10 @@ img {
 
 *:focus {outline: none}
 
+button {
+    cursor: pointer;
+}
+
 body {
     background-color: #336699;
 }
@@ -104,11 +108,11 @@ body {
 }
 
 .result {
-    padding-top: 40px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     font-size: 48px;
-    margin-bottom: 300px;
+    margin-bottom: 50px;
 }
 
 .result__item {
@@ -122,6 +126,49 @@ body {
 
 .result__item-num {
    display: none;
+}
+
+.hangman__images {
+    margin-bottom: 20px;
+    position: relative;
+    height: 450px;
+}
+
+.images {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.img-1 {
+    display: none;
+    z-index: 1;
+}
+
+.img-2 {
+    display: none;
+    z-index: 2;
+    top: 19px;
+}
+
+.img-3 {
+    display: none;
+    z-index: 3;
+    top: 77px;
+}
+
+.img-4 {
+    display: none;
+    z-index: 4;
+    top: 163px;
+    
+}
+
+.img-5 {
+    display: none;
+    z-index: 5;
+    top: 250px;
+    left: 51.5%;
 }
 
 .option__num {
@@ -151,7 +198,13 @@ body {
 }
 
 .losing {
-    margin-bottom: 100px;
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
 }
 
 .losing__inner {
@@ -161,6 +214,14 @@ body {
 }
 
 .losing__text {
-    margin-bottom: 25px;
     font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.losing__btn {
+    font-size: 28px;
+    background-color: transparent;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
